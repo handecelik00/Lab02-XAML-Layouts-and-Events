@@ -1,0 +1,33 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Lab02_XAML_Layouts_and_Events.RegisterWindow"
+        Title="Registration Form"
+        Width="400"
+        Height="400">
+
+    <StackPanel Margin="20" Spacing="12">
+        <TextBlock Text="Registration Form"
+                   FontSize="24"
+                   FontWeight="Bold"/>
+
+        <TextBlock Text="Name"/>
+        <TextBox x:Name="NameBox"
+                 Watermark="Enter your name"/>
+
+        <TextBlock Text="Email"/>
+        <TextBox x:Name="EmailBox"
+                 Watermark="Enter your email"/>
+
+        <TextBlock Text="Password"/>
+        <TextBox x:Name="PasswordBox"
+                 PasswordChar="*"
+                 Watermark="Enter password"/>
+
+        <Button Content="Register"
+                Click="Register_Click"/>
+
+        <TextBlock x:Name="RegisterMessage"
+                   TextWrapping="Wrap"/>
+    </StackPanel>
+</Window>

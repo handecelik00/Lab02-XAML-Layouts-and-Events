@@ -1,0 +1,100 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Lab02_XAML_Layouts_and_Events.MainWindow"
+        Width="520"
+        Height="530"
+        MinWidth="420"
+        MinHeight="450"
+        Title="BMI Calculator">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem x:Name="ExitMenuItem" Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem x:Name="AboutMenuItem" Header="_About"/>
+            </MenuItem>
+        </Menu>
+
+        <Border DockPanel.Dock="Bottom"
+                Background="#E5E5E5"
+                Padding="8">
+            <TextBlock x:Name="StatusText" Text="Ready"/>
+        </Border>
+
+        <ScrollViewer>
+            <StackPanel Margin="18" Spacing="10">
+                <TextBlock Text="BMI Calculator"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+
+                <Grid ColumnDefinitions="100,*,100"
+                      RowDefinitions="Auto,Auto"
+                      RowSpacing="8"
+                      ColumnSpacing="8">
+
+                    <TextBlock Grid.Row="0" Grid.Column="0"
+                               Text="Weight:"
+                               VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="WeightBox"
+                             Grid.Row="0" Grid.Column="1"
+                             Text="72"/>
+
+                    <ComboBox x:Name="WeightUnitBox"
+                              Grid.Row="0" Grid.Column="2"
+                              SelectedIndex="0">
+                        <ComboBoxItem Content="kg"/>
+                        <ComboBoxItem Content="lb"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0"
+                               Text="Height:"
+                               VerticalAlignment="Center"/>
+
+                    <TextBox x:Name="HeightBox"
+                             Grid.Row="1" Grid.Column="1"
+                             Text="180"/>
+
+                    <ComboBox x:Name="HeightUnitBox"
+                              Grid.Row="1" Grid.Column="2"
+                              SelectedIndex="0">
+                        <ComboBoxItem Content="cm"/>
+                        <ComboBoxItem Content="in"/>
+                    </ComboBox>
+                </Grid>
+
+                <CheckBox x:Name="ShowCategoriesBox"
+                          Content="Show category description"
+                          IsChecked="True"/>
+
+                <Button x:Name="CalculateButton"
+                        Content="Calculate"
+                        HorizontalAlignment="Right"
+                        Padding="20,8"/>
+
+                <TextBlock Text="BMI:"
+                           FontSize="16"/>
+
+                <TextBlock x:Name="BmiResult"
+                           Text="--"
+                           FontSize="28"
+                           FontWeight="Bold"/>
+
+                <TextBlock x:Name="CategoryResult"
+                           Text=""/>
+
+                <TextBlock x:Name="CategoryInfo"
+                           IsVisible="False"
+                           TextWrapping="Wrap"/>
+
+                <Button x:Name="RegisterButton"
+                        Content="Register"
+                        HorizontalAlignment="Right"/>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>
